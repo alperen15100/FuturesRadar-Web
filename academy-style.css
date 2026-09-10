@@ -1,0 +1,15 @@
+
+:root{--bg:#03070c;--line:#1a2939;--green:#28f36b;--text:#f8fafc;--muted:#93a4b8}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Segoe UI,Arial,sans-serif}
+body{background:radial-gradient(circle at 80% 4%,rgba(40,243,107,.10),transparent 25%),var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}.container{max-width:1160px;margin:0 auto;padding:22px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(3,7,12,.94);border-bottom:1px solid var(--line)}
+.navin{max-width:1160px;margin:0 auto;padding:14px 22px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.logo{font-weight:950;font-size:22px}.logo span{color:var(--green)}.links{display:flex;gap:10px;flex-wrap:wrap}
+.links a,.btn{background:#071019;border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:#dbeafe;font-size:13px}
+.hero,.card,.article,.faq{background:linear-gradient(180deg,#0d1622,#071019);border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0}
+.kicker{color:var(--green);font-size:12px;font-weight:900;text-transform:uppercase;margin-bottom:10px}h1{font-size:38px;line-height:1.1;margin-bottom:12px}h2{font-size:26px;margin:26px 0 12px}h3{font-size:20px;margin:18px 0 8px}
+p,li{color:#a8b6c9;font-size:16px;line-height:1.85}ul{padding-left:24px;margin:10px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card small{color:var(--green);font-weight:900}.card:hover{border-color:var(--green)}
+.article{padding:30px}.meta{color:var(--muted);font-size:13px}.notice{border:1px solid rgba(247,183,49,.35);background:rgba(247,183,49,.08);padding:14px;border-radius:12px;color:#f8e5a1;margin:16px 0}
+.footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:#7f8ea3;margin-top:30px}.footer a{text-decoration:underline;color:#9fb0c6;margin:0 6px}.category-title{border-left:4px solid var(--green);padding-left:12px}
+@media(max-width:800px){.navin{display:block}.links{margin-top:10px}.grid{grid-template-columns:1fr}h1{font-size:30px}.article{padding:18px}}
