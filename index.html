@@ -3,7 +3,7 @@
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3266016041579839" crossorigin="anonymous"></script>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FuturesRadar | Live Crypto Futures Market Intelligence</title>
 <meta name="description" content="FuturesRadar is a live crypto futures market intelligence platform with RSI monitoring, 24h overbought count, market heatmaps, signal analytics and educational trading guides.">
 <meta name="robots" content="index,follow">
@@ -281,6 +281,8 @@ gtag('js', new Date());
 gtag('config', 'G-0RQHSQTDG0');
 </script>
 
+<link rel="stylesheet" href="terminal.css">
+<link rel="canonical" href="https://futuresradar.org/">
 </head>
 <body>
 <div class="lang-fixed">
@@ -299,7 +301,7 @@ gtag('config', 'G-0RQHSQTDG0');
     <div class="radar"></div>
     <div><div class="logo">FUTURES<span>RADAR</span></div><div class="sub" data-i18n="brandSub">Live Crypto Futures RSI Scanner</div></div>
   </div>
-  <nav class="nav">
+  <nav class="nav"><a href="tools.html" data-terminal="tools">Trading tools</a><a href="#favorites" data-terminal="favorites">Favorites</a>
     <a class="active" href="#dashboard" data-i18n="navDashboard">▣ Dashboard</a>
     <a href="academy.html" data-i18n="navAcademy">📚 Academy</a>
     <a href="faq.html">❓ FAQ</a>
@@ -323,6 +325,7 @@ gtag('config', 'G-0RQHSQTDG0');
 </aside>
 
 <main class="main" id="dashboard">
+<header class="terminal-heading"><div><span class="eyebrow">FUTURESRADAR / TERMINAL</span><h1 data-terminal="marketTitle">Market overview</h1></div><a class="smallbtn" href="tools.html" data-terminal="tools">Trading tools</a></header>
   <div class="topbar">
     <input id="search" class="search" placeholder="Search symbols... BTC, SOL, NEAR">
     <div class="status">
@@ -338,11 +341,13 @@ gtag('config', 'G-0RQHSQTDG0');
   </div>
 
   <section class="cards" id="cards"></section>
+<div class="workspace-tabs" role="group" aria-label="Market views"><button type="button" class="active" data-view="market" data-terminal="market">Market</button><button type="button" data-view="favorites" data-terminal="favorites">Favorites</button><a href="tools.html" data-terminal="tools">Trading tools</a><a href="academy.html" data-terminal="academy">Academy</a></div>
+<section id="favoritesPanel" class="panel" hidden><div class="panel-head"><h2 data-terminal="favorites">Favorites</h2><span class="muted" data-terminal="deviceOnly">Saved on this device</span></div><div id="favoritesList"></div></section>
 
   <div class="layout">
     <section>
       <div class="panel" id="topSignals">
-        <div class="panel-head"><h2 data-i18n="signalsTitle">🔥 TOP SIGNALS — TRUE 24H RSI OVERBOUGHT COUNT</h2><a class="smallbtn" href="#intel" data-i18n="openIntel">Open Intelligence</a></div>
+        <div class="panel-head"><h2 data-i18n="signalsTitle">Top signals</h2><a class="smallbtn" href="#intel" data-i18n="openIntel">Open Intelligence</a></div>
         <div class="table-wrap desktop-table">
           <table>
             <thead><tr><th>#</th><th data-i18n="thCoin">Coin</th><th data-i18n="thPrice">Price</th><th>24h %</th><th>RSI 15m</th><th data-i18n="thOb">24h OB Count</th><th data-i18n="thScore">Score</th><th data-i18n="thSignal">Signal</th><th data-i18n="thStrength">Strength</th></tr></thead>
@@ -381,7 +386,7 @@ gtag('config', 'G-0RQHSQTDG0');
       </div>
 
       <div class="pro-panel" id="signal-history">
-        <h2>Signal History</h2>
+        <h2>Scanner history</h2>
         <p style="color:#a8b6c9;font-size:14px;line-height:1.7">Recent scanner activity is stored locally in your browser. This helps users review which markets appeared repeatedly instead of reacting blindly to a single alert.</p>
         <div class="history-list" id="signalHistoryList"></div>
       </div>
@@ -389,12 +394,14 @@ gtag('config', 'G-0RQHSQTDG0');
 
       <div class="panel" id="intel">
         <div class="panel-head">
-          <h2 data-i18n="intelTitle">SIGNAL INTELLIGENCE PANEL</h2>
+          <h2 data-i18n="intelTitle">Coin intelligence</h2>
           <a id="tvOpen" class="smallbtn" href="#" target="_blank" rel="noopener" data-i18n="openTradingView">Open TradingView</a>
         </div>
-        <div class="intel-grid">
+        <div class="detail-actions"><button type="button" class="smallbtn" id="favoriteSelected">☆ Favorite</button><button type="button" class="smallbtn" id="shareSelected" data-terminal="share">Copy coin link</button><a id="calculateSelected" class="smallbtn" href="tools/profit-loss.html" data-terminal="calculate">Calculate P&amp;L</a><span id="actionNotice" role="status"></span></div>
+<div class="chart-head"><span data-terminal="chartTitle">15m closing prices · last 120 candles</span><span id="chartState" role="status"></span></div><div id="coinChart" class="coin-chart"></div>
+<div class="intel-grid">
           <div class="hero-intel" id="heroIntel"></div>
-          <div class="bars" id="intelBars"></div>
+          <div class="bars" id="intelBars"></div><div id="scoreBreakdown" class="score-breakdown"></div>
         </div>
         <div class="movers" id="movers"></div>
       </div>
@@ -402,12 +409,12 @@ gtag('config', 'G-0RQHSQTDG0');
 
     <section>
       <div class="panel" id="heatmapBox">
-        <div class="panel-head"><h2 data-i18n="heatmapTitle">MARKET HEATMAP</h2><span class="smallbtn" data-i18n="period24">24 hours</span></div>
+        <div class="panel-head"><h2 data-i18n="heatmapTitle">Market heatmap</h2><span class="smallbtn" data-i18n="period24">24 hours</span></div>
         <div class="heatmap" id="heatmap"></div>
       </div>
 
       <div class="panel">
-        <div class="panel-head"><h2 data-i18n="recentTitle">RECENT SIGNALS</h2><span class="smallbtn" data-i18n="live">Live</span></div>
+        <div class="panel-head"><h2 data-i18n="recentTitle">Recent activity</h2><span class="smallbtn" data-i18n="live">Live</span></div>
         <div id="recent"></div>
       </div>
 
@@ -454,10 +461,10 @@ const T={
     marketsLabel:"Markets",updatedLabel:"Updated",statusLabel:"Status",academyBtn:"Academy",topSignalsBtn:"Top Signals",
     academyHeroTitle:"Market Education Academy",academyHeroText:"Learn RSI, overbought conditions, futures risk, liquidation, funding rates, market heatmaps and trading psychology. These guides are built to make the scanner easier to understand and support long-term educational value.",
     academyTitle:"Featured Educational Guides",academyBadge:"Beginner Friendly",readGuide:"Read Guide",
-    signalsTitle:"🔥 TOP SIGNALS — TRUE 24H RSI OVERBOUGHT COUNT",openIntel:"Open Intelligence",
+    signalsTitle:"Top signals",openIntel:"Open Intelligence",
     thCoin:"Coin",thPrice:"Price",thOb:"24h OB Count",thScore:"Score",thSignal:"Signal",thStrength:"Strength",
-    intelTitle:"SIGNAL INTELLIGENCE PANEL",openTradingView:"Open TradingView",heatmapTitle:"MARKET HEATMAP",period24:"24 hours",
-    recentTitle:"RECENT SIGNALS",live:"Live",telegramText:"Professional crypto market alerts, RSI tracking and live futures scanner updates.",
+    intelTitle:"Coin intelligence",openTradingView:"Open TradingView",heatmapTitle:"Market heatmap",period24:"24 hours",
+    recentTitle:"Recent activity",live:"Live",telegramText:"Professional crypto market alerts, RSI tracking and live futures scanner updates.",
     footer:"© 2026 FuturesRadar. Market intelligence platform providing educational analytics, RSI monitoring, futures market screening and quantitative insights. Not financial advice.",
     aboutLink:"About",privacyLink:"Privacy Policy",cookiesLink:"Cookie Policy",termsLink:"Terms",disclaimerLink:"Disclaimer",contactLink:"Contact",cookieSettingsLink:"Cookie Settings",
     cookieBannerTitle:"Cookie Preferences",cookieBannerText:"We use essential cookies to operate this website. You can accept or reject optional analytics and advertising cookies. Non-essential cookies are off by default.",
@@ -711,6 +718,7 @@ function cookieState(){try{return JSON.parse(localStorage.getItem("fr_cookie_con
 function showCookieBanner(){
   const banner=document.getElementById("cookieBanner");
   const settings=document.getElementById("cookieSettings");
+  if(!banner || !settings)return;
   if(!cookieState()){
     document.getElementById("analyticsConsent").checked=false;
     document.getElementById("adsConsent").checked=false;
@@ -774,5 +782,5 @@ showCookieBanner();
   </div>
 </div>
 
-</body>
+<nav class="mobile-dock" aria-label="Primary navigation"><a href="#dashboard" data-terminal="market">Market</a><a href="#favorites" data-terminal="favorites">Favorites</a><a href="tools.html" data-terminal="tools">Tools</a><a href="academy.html" data-terminal="academy">Academy</a></nav><script src="terminal.js"></script></body>
 </html>
