@@ -1,0 +1,33 @@
+/* FuturesRadar Premium V2 — presentation only. No scanner/data logic. */
+:root{--fr-glow:rgba(183,255,60,.18);--fr-soft:rgba(183,255,60,.07);--fr-border:rgba(255,255,255,.075)}
+/* compact live market strip */
+.topbar .status{gap:0!important;border:1px solid var(--fr-border);background:rgba(11,16,21,.72);border-radius:999px;padding:3px;overflow:hidden}
+.topbar .status span{border:0!important;background:transparent!important;border-radius:0!important;padding:6px 10px!important;position:relative}
+.topbar .status span+span:before{content:"";position:absolute;left:0;top:25%;height:50%;width:1px;background:rgba(255,255,255,.08)}
+#apiStatus{display:inline-flex;align-items:center;gap:6px}#apiStatus:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+/* scanner hierarchy */
+#topSignals{position:relative;overflow:hidden}#topSignals:before{content:"";position:absolute;left:0;top:0;width:72px;height:1px;background:linear-gradient(90deg,var(--green),transparent)}
+#topSignals .panel-head h2{font-size:18px;font-weight:760}
+.compact-signal{position:relative}.compact-signal:after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:1px;background:linear-gradient(90deg,var(--green),transparent);transition:width .2s ease}.compact-signal:hover:after,.compact-signal.selected:after{width:42%}
+.compact-name strong,.compact-price{font-weight:720}.compact-metrics{letter-spacing:.15px}
+.signal-card{position:relative;overflow:hidden}.signal-card:before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;border-radius:2px;background:rgba(183,255,60,.22)}.signal-card.selected-row:before{background:var(--green);box-shadow:0 0 12px var(--fr-glow)}
+.signal-card-top{padding-left:5px}.signal-grid{padding-left:5px}
+/* score / intelligence */
+.pro-box{position:relative;overflow:hidden}.pro-box:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:70%;background:linear-gradient(90deg,var(--green),transparent);opacity:.35}
+#detailOverview .hero-intel,.hero-intel{position:relative}.hero-symbol{font-weight:800}.hero-price{font-weight:780}
+.metric{transition:border-color .18s ease,transform .18s ease}.metric:hover{border-color:rgba(183,255,60,.18);transform:translateY(-1px)}
+.score-breakdown{background:rgba(7,11,14,.25)}
+/* heatmap depth */
+.heat{position:relative;overflow:hidden;transition:transform .18s ease,filter .18s ease}.heat:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.055),transparent 48%);pointer-events:none}.heat:hover{transform:translateY(-2px);filter:brightness(1.08)}
+/* chart */
+.coin-chart{position:relative;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:36px 36px}
+/* loading state: visual only; disappears as existing JS renders data */
+#mobileSignals:empty{min-height:230px;display:block!important;position:relative;overflow:hidden;border-radius:10px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.025) 0 46px,transparent 46px 58px)}
+#mobileSignals:empty:before{content:"Scanning futures markets…";position:absolute;left:14px;top:16px;color:#9aa9b8;font-size:12px;letter-spacing:.25px}
+#mobileSignals:empty:after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,rgba(183,255,60,.045),transparent);animation:frScan 1.6s infinite}
+@keyframes frScan{100%{transform:translateX(100%)}}
+/* mobile polish */
+@media(max-width:900px){
+ .main{padding-bottom:78px!important}.terminal-heading{margin-bottom:14px}.topbar{gap:9px!important;padding-bottom:10px!important;margin-bottom:10px!important}.topbar .status{width:100%;display:grid!important;grid-template-columns:repeat(3,1fr);overflow:visible!important}.topbar .status span{text-align:center;padding:7px 4px!important;font-size:10px}.cards{margin-bottom:10px!important}.layout .panel{margin-bottom:10px!important}.panel-head{padding-bottom:8px!important;margin-bottom:9px!important}.signal-card{margin-bottom:8px!important}.signal-grid{gap:5px!important}.signal-metric{padding:8px 6px!important}.signal-metric span{font-size:10px!important}.signal-metric b{font-size:13px!important}.mobile-dock{padding-top:7px!important;padding-bottom:max(7px,env(safe-area-inset-bottom))!important}.mobile-dock a{padding:8px 7px!important;font-size:12px!important}.mobile-dock a.active{box-shadow:inset 0 -2px var(--green)}
+}
+@media(prefers-reduced-motion:reduce){#mobileSignals:empty:after{animation:none}.heat,.metric,.compact-signal{transition:none}}
