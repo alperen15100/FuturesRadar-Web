@@ -1,0 +1,31 @@
+name: Apply Premium V2
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-premium-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link premium stylesheet
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          tag='<link rel="stylesheet" href="premium-v2.css">'
+          if tag not in s:
+              s=s.replace('</head>', tag+'\n</head>', 1)
+              p.write_text(s)
+          PY
+      - name: Commit visual layer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Enable premium V2 presentation layer"
+          git push
