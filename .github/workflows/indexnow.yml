@@ -1,0 +1,21 @@
+name: IndexNow Submit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "academy.html"
+      - "academy/**"
+      - "tools.html"
+      - "tools/**"
+      - "sitemap.xml"
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for site deployment
+        run: sleep 90
+      - name: Submit sitemap URLs to IndexNow
+        run: python3 scripts/indexnow.py

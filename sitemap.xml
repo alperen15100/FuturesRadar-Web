@@ -1,37 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://futuresradar.org/</loc></url>
-<url><loc>https://futuresradar.org/academy</loc></url>
-<url><loc>https://futuresradar.org/faq</loc></url>
-<url><loc>https://futuresradar.org/about</loc></url>
-<url><loc>https://futuresradar.org/contact</loc></url>
-<url><loc>https://futuresradar.org/privacy-policy</loc></url>
-<url><loc>https://futuresradar.org/cookie-policy</loc></url>
-<url><loc>https://futuresradar.org/disclaimer</loc></url>
-<url><loc>https://futuresradar.org/terms</loc></url>
-<url><loc>https://futuresradar.org/academy/beginner-checklist</loc></url>
-<url><loc>https://futuresradar.org/academy/crypto-volatility</loc></url>
-<url><loc>https://futuresradar.org/academy/funding-rates</loc></url>
-<url><loc>https://futuresradar.org/academy/liquidation-explained</loc></url>
-<url><loc>https://futuresradar.org/academy/market-structure</loc></url>
-<url><loc>https://futuresradar.org/academy/multi-timeframe-rsi</loc></url>
-<url><loc>https://futuresradar.org/academy/open-interest</loc></url>
-<url><loc>https://futuresradar.org/academy/position-sizing</loc></url>
-<url><loc>https://futuresradar.org/academy/risk-reward</loc></url>
-<url><loc>https://futuresradar.org/academy/rsi-above-70</loc></url>
-<url><loc>https://futuresradar.org/academy/rsi-below-30</loc></url>
-<url><loc>https://futuresradar.org/academy/rsi-divergence</loc></url>
-<url><loc>https://futuresradar.org/academy/stop-loss</loc></url>
-<url><loc>https://futuresradar.org/academy/support-resistance</loc></url>
-<url><loc>https://futuresradar.org/academy/trading-psychology</loc></url>
-<url><loc>https://futuresradar.org/academy/trend-analysis</loc></url>
-<url><loc>https://futuresradar.org/academy/volume-analysis</loc></url>
-<url><loc>https://futuresradar.org/academy/what-is-futures-trading</loc></url>
-<url><loc>https://futuresradar.org/academy/what-is-leverage</loc></url>
-<url><loc>https://futuresradar.org/academy/what-is-rsi</loc></url>
-<url><loc>https://futuresradar.org/tools</loc></url>
-<url><loc>https://futuresradar.org/tools/position-sizing</loc></url>
-<url><loc>https://futuresradar.org/tools/profit-loss</loc></url>
-<url><loc>https://futuresradar.org/tools/break-even</loc></url>
-<url><loc>https://futuresradar.org/tools/funding-cost</loc></url>
-<url><loc>https://futuresradar.org/methodology</loc></url><url><loc>https://futuresradar.org/editorial-policy</loc></url><url><loc>https://futuresradar.org/tools/risk-reward</loc></url><url><loc>https://futuresradar.org/tools/leverage</loc></url><url><loc>https://futuresradar.org/academy/rsi-overbought-strong-trend</loc></url><url><loc>https://futuresradar.org/academy/rsi-70-false-signal</loc></url><url><loc>https://futuresradar.org/tools/trading-fees</loc></url></urlset>
+  <url>
+    <loc>https://futuresradar.org/</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/faq</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/about</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/contact</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/privacy-policy</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/cookie-policy</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/disclaimer</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/terms</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/beginner-checklist</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/crypto-volatility</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/funding-rates</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/liquidation-explained</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/market-structure</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/multi-timeframe-rsi</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/open-interest</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/position-sizing</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/risk-reward</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/rsi-above-70</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/rsi-below-30</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/rsi-divergence</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/stop-loss</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/support-resistance</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/trading-psychology</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/trend-analysis</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/volume-analysis</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/what-is-futures-trading</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/what-is-leverage</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/what-is-rsi</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools/position-sizing</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools/profit-loss</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools/break-even</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools/funding-cost</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/methodology</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/editorial-policy</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools/risk-reward</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools/leverage</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/rsi-overbought-strong-trend</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/academy/rsi-70-false-signal</loc>
+  </url>
+  <url>
+    <loc>https://futuresradar.org/tools/trading-fees</loc>
+  </url>
+</urlset>
