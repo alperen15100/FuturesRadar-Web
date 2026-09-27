@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Astrielle AI Data Deletion Request</title>
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    :root{color-scheme:dark}*{box-sizing:border-box}
+    body{margin:0;background:#070912;color:#f7f3ff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    main{max-width:760px;margin:0 auto;padding:28px 18px 56px}
+    .brand{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#b963ff;font-weight:800}
+    h1{font-size:32px;margin:8px 0 8px}.sub{color:#a6a9be;margin:0 0 22px}
+    .card{background:#0d1120;border:1px solid #2b3354;border-radius:20px;padding:18px}
+    label{display:block;font-size:13px;font-weight:700;margin:14px 0 7px;color:#d9c5ff}
+    input,textarea{width:100%;border:1px solid #343d62;background:#12172a;color:#f7f3ff;border-radius:12px;padding:12px;font:inherit}
+    textarea{min-height:130px;resize:vertical}
+    button{margin-top:18px;width:100%;border:0;border-radius:13px;padding:14px 18px;font-weight:800;font-size:16px;color:white;background:linear-gradient(90deg,#6d42e8,#9b4dff,#e05acb)}
+    small{display:block;color:#8f95ad;margin-top:12px}.hidden{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}a{color:#c99bff}
+  </style>
+</head>
+<body>
+<main>
+  <div class="brand">ASTRIELLE AI · ECRIN LABS</div>
+  <h1>Request data deletion</h1>
+  <p class="sub">Use this form to request deletion of Astrielle AI data held by Ecrin Labs, such as submitted safety reports.</p>
+  <div class="card">
+    <form name="astrielle-data-deletion-request" method="POST" action="/astrielle/delete-data-success.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="astrielle-data-deletion-request">
+      <p class="hidden"><label>Do not fill this out if you are human:<input name="bot-field"></label></p>
+
+      <label for="email">Contact email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+
+      <label for="reportId">Report ID (optional)</label>
+      <input id="reportId" name="reportId" type="text" maxlength="120" placeholder="If you have one">
+
+      <label for="details">Request details</label>
+      <textarea id="details" name="details" maxlength="2000" required placeholder="Tell us what data you want deleted."></textarea>
+
+      <button type="submit">Submit deletion request</button>
+      <small>Astrielle AI does not use user accounts. Local Gallery/Favorites can be removed in the app. This request covers data held by Ecrin Labs. Data processed independently by third-party generation services is governed by their own privacy practices.</small>
+    </form>
+  </div>
+</main>
+</body>
+</html>
