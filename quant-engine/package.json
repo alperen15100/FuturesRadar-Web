@@ -1,0 +1,1 @@
+{"name":"ecrin-quant-engine","version":"1.0.0","private":true,"type":"module","scripts":{"scan":"node src/scanner.mjs"},"engines":{"node":">=20"}}
