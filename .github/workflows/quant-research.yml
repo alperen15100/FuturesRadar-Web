@@ -1,0 +1,27 @@
+name: Quant Research
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        description: Symbol for baseline backtest
+        required: false
+        default: BTCUSDT
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: quant-engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm run scan > scan.json
+      - run: node src/backtest.mjs ${{ inputs.symbol }} 15m > backtest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecrin-quant-research
+          path: |
+            quant-engine/scan.json
+            quant-engine/backtest.json
