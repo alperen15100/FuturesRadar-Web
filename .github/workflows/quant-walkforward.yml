@@ -1,0 +1,28 @@
+name: Quant Walk Forward
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        description: Binance USDT perpetual symbol
+        required: true
+        default: BTCUSDT
+      interval:
+        description: Candle interval
+        required: true
+        default: 15m
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: quant-engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node src/walkforward.mjs ${{ inputs.symbol }} ${{ inputs.interval }} > walkforward.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: walkforward-${{ inputs.symbol }}-${{ inputs.interval }}
+          path: quant-engine/walkforward.json

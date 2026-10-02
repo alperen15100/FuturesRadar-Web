@@ -1,0 +1,16 @@
+{
+  "name": "ecrin-quant-engine",
+  "version": "1.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scan": "node src/scanner.mjs",
+    "backtest": "node src/backtest.mjs",
+    "backtest:universe": "node src/universe-backtest.mjs",
+    "walkforward": "node src/walkforward.mjs",
+    "strategy-lab": "node src/strategy-lab.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
