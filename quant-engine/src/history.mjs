@@ -1,0 +1,3 @@
+const BASE="https://fapi.binance.com";const sleep=ms=>new Promise(r=>setTimeout(r,ms));const j=async p=>{let r=await fetch(BASE+p);if(!r.ok)throw new Error(`${r.status} ${p}`);return r.json()};
+export async function history(symbol,interval,start,end=Date.now()){let out=[],cursor=start;while(cursor<end){let q=`/fapi/v1/klines?symbol=${symbol}&interval=${interval}&limit=1500&startTime=${cursor}&endTime=${end}`,x=await j(q);if(!x.length)break;out.push(...x);let next=x.at(-1)[6]+1;if(next<=cursor)break;cursor=next;await sleep(80)}let seen=new Set;return out.filter(x=>!seen.has(x[0])&&seen.add(x[0])).sort((a,b)=>a[0]-b[0])}
+export const yearsAgo=y=>{let d=new Date();d.setUTCFullYear(d.getUTCFullYear()-y);return d.getTime()};
