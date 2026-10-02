@@ -1,1 +1,1 @@
-{"name":"ecrin-quant-engine","version":"1.1.0","private":true,"type":"module","scripts":{"scan":"node src/scanner.mjs","backtest":"node src/backtest.mjs","backtest:universe":"node src/universe-backtest.mjs"},"engines":{"node":">=20"}}
+{"name":"ecrin-quant-engine","version":"1.2.0","private":true,"type":"module","scripts":{"scan":"node src/scanner.mjs","backtest":"node src/backtest.mjs","backtest:universe":"node src/universe-backtest.mjs","walkforward":"node src/walkforward.mjs"},"engines":{"node":">=20"}}
