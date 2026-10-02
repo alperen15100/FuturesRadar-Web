@@ -1,0 +1,34 @@
+name: Quant Strategy Lab
+on:
+  workflow_dispatch:
+    inputs:
+      max_markets:
+        description: 0 = all liquid USDT perpetual markets
+        required: true
+        default: "10"
+      timeframes:
+        description: Comma separated
+        required: true
+        default: "15m,1h"
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    defaults:
+      run:
+        working-directory: quant-engine
+    env:
+      MAX_MARKETS: ${{ inputs.max_markets }}
+      TIMEFRAMES: ${{ inputs.timeframes }}
+      MIN_QUOTE_VOLUME: "5000000"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node src/strategy-lab.mjs > strategy-lab.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ecrin-strategy-lab
+          path: quant-engine/strategy-lab.json
+          retention-days: 30
